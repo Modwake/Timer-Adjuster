@@ -9,7 +9,7 @@ For those using it to fix it being hidden at certain resolutions/scales here are
 
 ## Initial setup
 
-After initial boot a config file is generated inside `steamapps/common/Blackwake` called `timerFix.cfg`.
+After initial boot a config file is generated inside `steamapps/common/Blackwake/Configs` called `timerFix.cfg`.
 
 Inside this file you will find the following setup:
 

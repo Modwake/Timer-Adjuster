@@ -12,7 +12,7 @@ namespace timerFix
         public static mainmod Instance;
         static Vector3 defaultPos;
         static Vector3 offset = new Vector3(0, 0, 0);
-        static string configFile = "timerFix.cfg";
+        static string configFile = "Configs/timerFix.cfg";
         static bool changeRuntime = false;
         static bool hasStarted = false;
         static string updateKey;
@@ -80,6 +80,10 @@ namespace timerFix
 
         void fileExists()
         {
+            if (!Directory.Exists("Configs"))
+            {
+                Directory.CreateDirectory("Configs");
+            }
             if (!File.Exists(configFile))
             {
                 StreamWriter streamWriter = new StreamWriter(configFile);
