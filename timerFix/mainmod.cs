@@ -116,23 +116,20 @@ namespace timerFix
             Logger.log("Set to: " + UI.Instance.matchHUD.íðæåñóççíìè.transform.localPosition.ToString());
         }
 
-        [HarmonyPatch(typeof(MatchHUD), "Start")]
-        static class getHudPatch
-        {
-            static void Postfix(MatchHUD __instance)
-            {
-                hasStarted = true;
-                defaultPos = UI.Instance.matchHUD.íðæåñóççíìè.transform.localPosition;
-                Logger.log("Set Default: " + defaultPos.ToString());
-            }
-        }
-
         [HarmonyPatch(typeof(MatchHUD), "OnEnable")]
         static class applyOffsetPatch
         {
             static void Postfix()
             {
-                applyOffset();
+                if (hasStarted)
+                {
+                    applyOffset();
+                }
+                else
+                {
+                    defaultPos = UI.Instance.matchHUD.íðæåñóççíìè.transform.localPosition;
+                    Logger.log("Set Default: " + defaultPos.ToString());
+                }
             }
         }
     }
