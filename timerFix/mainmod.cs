@@ -12,7 +12,7 @@ namespace timerFix
         public static mainmod Instance;
         static Vector3 defaultPos;
         static Vector3 offset = new Vector3(0, 0, 0);
-        static string configFile = "Configs/timerFix.cfg";
+        static string configFile = "Blackwake_Data/Managed/Mods/Configs/timerFix.cfg";
         static bool changeRuntime = false;
         static bool hasStarted = false;
         static string updateKey;
@@ -80,9 +80,9 @@ namespace timerFix
 
         void fileExists()
         {
-            if (!Directory.Exists("Configs"))
+            if (!Directory.Exists("Blackwake_Data/Managed/Mods/Configs"))
             {
-                Directory.CreateDirectory("Configs");
+                Directory.CreateDirectory("Blackwake_Data/Managed/Mods/Configs");
             }
             if (!File.Exists(configFile))
             {
