@@ -21,6 +21,8 @@ y=0
 z=0
 ```
 
+All of the above options can be changed. And it is reccomended to set `Change_at_runtime` to `false` after you're happy with the value
+
 You can press the `Update_key` button at runtime to reload the offset value should you change them inside the **timerFix.cfg**.
 
 Setting **x** to a positive value will move it to the right, negative will move it to the left.
