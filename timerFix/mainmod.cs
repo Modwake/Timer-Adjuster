@@ -33,11 +33,9 @@ namespace timerFix
         {
             if (Input.GetKeyUp(updateKey) && changeRuntime)
             {
-                Logger.log("updating...");
                 loadFromConfig();
                 if (hasStarted)
                 {
-                    Logger.log("Not null");
                     applyOffset();
                 }
             }
@@ -59,11 +57,9 @@ namespace timerFix
                         {
                             case "Change_at_runtime":
                                 bool.TryParse(splitArr[1], out changeRuntime);
-                                Logger.log("Set to: " + changeRuntime);
                                 break;
                             case "Update_key":
                                 updateKey = splitArr[1];
-                                Logger.log("Set to: -" + splitArr[1] + "-");
                                 break;
                             case "x":
                                 float.TryParse(splitArr[1], out offset.x);
@@ -110,10 +106,7 @@ namespace timerFix
         static void applyOffset()
         {
             UI.Instance.matchHUD.íðæåñóççíìè.transform.localPosition = defaultPos;
-            Logger.log("Set to Default: " + defaultPos.ToString());
             UI.Instance.matchHUD.íðæåñóççíìè.transform.localPosition += offset;
-            Logger.log("Set offset: " + offset.ToString());
-            Logger.log("Set to: " + UI.Instance.matchHUD.íðæåñóççíìè.transform.localPosition.ToString());
         }
 
         [HarmonyPatch(typeof(MatchHUD), "OnEnable")]
@@ -129,7 +122,6 @@ namespace timerFix
                 {
                     hasStarted = true;
                     defaultPos = UI.Instance.matchHUD.íðæåñóççíìè.transform.localPosition;
-                    Logger.log("Set Default: " + defaultPos.ToString());
                 }
             }
         }
