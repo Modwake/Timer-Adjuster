@@ -14,7 +14,8 @@ namespace timerFix
         static Vector3 offset = new Vector3(0, 0, 0);
         static string configFile = "timerFix.cfg";
         static bool changeRuntime = false;
-        static string updateKey = "*";
+        static bool hasStarted = false;
+        static string updateKey;
 
         void Awake()
         {
@@ -30,11 +31,13 @@ namespace timerFix
 
         void Update()
         {
-            if (Input.GetKeyDown(updateKey) && changeRuntime)
+            if (Input.GetKeyUp(updateKey) && changeRuntime)
             {
+                Logger.log("updating...");
                 loadFromConfig();
-                if (UI.Instance.matchHUD != null)
+                if (hasStarted)
                 {
+                    Logger.log("Not null");
                     applyOffset();
                 }
             }
@@ -56,9 +59,11 @@ namespace timerFix
                         {
                             case "Change_at_runtime":
                                 bool.TryParse(splitArr[1], out changeRuntime);
+                                Logger.log("Set to: " + changeRuntime);
                                 break;
                             case "Update_key":
                                 updateKey = splitArr[1];
+                                Logger.log("Set to: -" + splitArr[1] + "-");
                                 break;
                             case "x":
                                 float.TryParse(splitArr[1], out offset.x);
@@ -84,7 +89,7 @@ namespace timerFix
             if (!File.Exists(configFile))
             {
                 StreamWriter streamWriter = new StreamWriter(configFile);
-                streamWriter.WriteLine("Update_key=*");
+                streamWriter.WriteLine("Update_key=[");
                 streamWriter.WriteLine("Change_at_runtime=true");
                 streamWriter.WriteLine("x=0");
                 streamWriter.WriteLine("y=0");
@@ -116,6 +121,7 @@ namespace timerFix
         {
             static void Postfix(MatchHUD __instance)
             {
+                hasStarted = true;
                 defaultPos = UI.Instance.matchHUD.íðæåñóççíìè.transform.localPosition;
                 Logger.log("Set Default: " + defaultPos.ToString());
             }
