@@ -91,7 +91,6 @@ namespace timerFix
                 streamWriter.WriteLine("Change_at_runtime=true");
                 streamWriter.WriteLine("x=0");
                 streamWriter.WriteLine("y=0");
-                streamWriter.WriteLine("z=0");
                 streamWriter.Close();
             }
         }

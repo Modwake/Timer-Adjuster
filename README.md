@@ -18,7 +18,6 @@ Update_key=[
 Change_at_runtime=true
 x=0
 y=0
-z=0
 ```
 
 All of the above options can be changed. It is reccomended to set `Change_at_runtime` to `false` after you're happy with the value
