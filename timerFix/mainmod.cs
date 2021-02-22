@@ -76,8 +76,6 @@ namespace timerFix
                     }
                 }
             }
-
-            Logger.log("Loaded offset: " + offset.ToString());
         }
 
         void fileExists()
