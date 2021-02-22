@@ -14,7 +14,7 @@ After initial boot a config file is generated inside `steamapps/common/Blackwake
 Inside this file you will find the following setup:
 
 ```text
-Update_key=*
+Update_key=[
 Change_at_runtime=true
 x=0
 y=0
