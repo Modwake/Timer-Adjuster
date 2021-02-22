@@ -127,6 +127,7 @@ namespace timerFix
                 }
                 else
                 {
+                    hasStarted = true;
                     defaultPos = UI.Instance.matchHUD.íðæåñóççíìè.transform.localPosition;
                     Logger.log("Set Default: " + defaultPos.ToString());
                 }
