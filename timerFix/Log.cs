@@ -4,7 +4,7 @@ namespace timerFix
 {
     internal static class Log
     {
-        static readonly public ModLogger logger = new ModLogger("[TimerFix]", ModLoader.LogPath + "\\Alternion.txt");
+        static readonly public ModLogger logger = new ModLogger("[TimerFix]", ModLoader.LogPath + "\\TimerFix.txt");
     }
     public class Logger
     {
