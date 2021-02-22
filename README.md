@@ -6,3 +6,21 @@ For those using it to fix it being hidden at certain resolutions/scales here are
 
 - 16x10
 	- x : -20
+
+## Initial setup
+
+After initial boot a config file is generated inside `steamapps/common/Blackwake` called `timerFix.cfg`.
+
+Inside this file you will find the following setup:
+
+```text
+Update_key=*
+Change_at_runtime=true
+x=0
+y=0
+z=0
+```
+
+You can press the `Update_key` button at runtime to reload the offset value should you change them inside the **timerFix.cfg**.
+
+Setting **x** to a positive value will move it to the right, negative will move it to the left.
