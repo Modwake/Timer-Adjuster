@@ -4,12 +4,12 @@ Simple mod that lets you move the position of the timer
 
 For those using it to fix it being hidden at certain resolutions/scales here are a few reccomended:
 
-- 16x10
-	- x : -20
+- 16x10 (1920x1080)
+	- x : -35
 
 ## Initial setup
 
-After initial boot a config file is generated inside `steamapps/common/Blackwake/Configs` called `timerFix.cfg`.
+After initial boot a config file is generated inside `steamapps/common/Blackwake/Blackwake_Data/Managed/Mods/Configs` called `timerFix.cfg`.
 
 Inside this file you will find the following setup:
 
